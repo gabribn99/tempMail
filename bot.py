@@ -24,7 +24,6 @@ while (True):
     res = r.request("GET", url + get_messages).json()
 
     if len(res) > 0 and last_mail != res[0]:
-        #print(res[0])
         last_mail = res[0]
         get_data = f'&id={last_mail["id"]}'
         res = r.request("GET", url + read_message + get_data).json()
